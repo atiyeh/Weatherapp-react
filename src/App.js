@@ -1,12 +1,12 @@
-import "./App.css";
+import Search from "./component/searchbox";
+import "./index.css";
 
 function App() {
   return (
     <div className="Search">
-      <form className="searchform">
-        <input type="search" placeholder="Type a city" />
-        <button> Search</button>
-      </form>
+      <div className="container">
+        <Search />
+      </div>
     </div>
   );
 }

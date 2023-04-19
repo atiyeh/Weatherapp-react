@@ -7,6 +7,16 @@ body {
   object-fit: cover;
   background-position: center;
 }
-.searchform {
-  text-align: center;
+
+.container {
+  background-color: aliceblue;
+  padding: 150px;
+  margin: auto;
+  width: 300px;
+  height: 100px;
+  background-color: aliceblue;
+
+  margin-top: 100px;
+  opacity: 50%;
+  border-radius: 5px;
 }
