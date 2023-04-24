@@ -11,9 +11,9 @@ body {
 .container {
     padding: 1% 8% 30% 8%;
     margin: auto;
-    width: 45%;
+    width: 30%;
     height: 100%;
     background-color: aliceblue;
-    opacity: 30%;
+    opacity: 60%;
     border-radius: 15px;
 }
