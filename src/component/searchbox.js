@@ -61,7 +61,7 @@ export default function Search(props) {
                             className="icon-input"
                         />
                     </li>
-                    <li>Description: {weatherDate.description}</li>
+                    <li className="description">{weatherDate.description}</li>
                     <li>
                         Temperature: {Math.round(weatherDate.temperature)}°C
                     </li>

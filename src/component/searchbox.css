@@ -27,11 +27,15 @@ button {
     margin-top: 30px;
 }
 .nameinput {
-    margin: 30px;
+    margin: 65px 30px 30px 30px;
     font-weight: 700;
     font-size: 38px;
     text-align: center;
     text-transform: capitalize;
+}
+.detail-input,
+.nameinput {
+    color: rgb(255, 255, 255);
 }
 .detail-input {
     list-style: none;
@@ -39,16 +43,16 @@ button {
     font-size: 17px;
     font-weight: 600;
     text-align: center;
-    line-height: 27px;
+    line-height: 35px;
     text-transform: capitalize;
 }
 .icon-input {
-    background-color: #342c26;
+    background-color: #76706b;
     width: 25%;
     border-radius: 20px;
 }
 .icon-input:hover {
-    background-color: #76706b;
+    background-color: #655c55;
 }
 .loader {
     width: 100px;
@@ -56,4 +60,7 @@ button {
     margin: auto;
     position: relative;
     top: 92px;
+}
+.description {
+    margin-bottom: 10px;
 }
