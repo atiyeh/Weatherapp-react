@@ -9,11 +9,17 @@ body {
 }
 
 .container {
-    padding: 1% 8% 30% 8%;
+    padding: 1% 8% 20% 8%;
     margin: auto;
     width: 30%;
     height: 100%;
     background-color: aliceblue;
     opacity: 60%;
     border-radius: 15px;
+}
+@media (max-width: 800px) {
+    .container {
+        width: 75%;
+        padding: 1% 8% 100% 8%;
+    }
 }
