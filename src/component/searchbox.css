@@ -12,7 +12,6 @@
     padding: 0px;
     border: none;
     outline: none;
-
     width: 100%;
     font-size: 18px;
     background-color: aliceblue;
@@ -29,8 +28,8 @@ button {
 }
 .nameinput {
     margin: 30px;
+    font-weight: 700;
     font-size: 38px;
-    opacity: 70%;
     text-align: center;
     text-transform: capitalize;
 }
@@ -38,14 +37,18 @@ button {
     list-style: none;
     padding-left: 0px;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
-    line-height: 20px;
+    line-height: 27px;
+    text-transform: capitalize;
 }
 .icon-input {
-    background-color: #9e9c9c;
+    background-color: #342c26;
     width: 25%;
     border-radius: 20px;
+}
+.icon-input:hover {
+    background-color: #76706b;
 }
 .loader {
     width: 100px;

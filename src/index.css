@@ -6,8 +6,9 @@ body {
     background-blend-mode: darken;
     object-fit: cover;
     background-position: center;
+    font-family: "Montserrat", sans-serif;
 }
-
+@import url("https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@300&family=Poppins:wght@300&family=Roboto&family=Rubik+Gemstones&family=Train+One&display=swap");
 .container {
     padding: 1% 8% 20% 8%;
     margin: auto;
