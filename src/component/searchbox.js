@@ -2,31 +2,39 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { Oval } from "react-loader-spinner";
 
 import "./searchbox.css";
 
 export default function Search(props) {
-    const [city, setcity] = useState(" ");
+    const [city, setcity] = useState(props.defaultcity);
     const [weatherDate, setWeatherData] = useState({ loaded: false });
 
     function displayWeather(response) {
         setWeatherData({
+            loaded: true,
             temperature: response.data.main.temp,
-
             wind: response.data.wind.speed,
             humidity: response.data.main.humidity,
             icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
             description: response.data.weather[0].description,
-            loaded: true,
+            city: response.data.name,
         });
     }
+
     function showvalue(event) {
         event.preventDefault();
+        search();
     }
+
     function changecity(event) {
         setcity(event.target.value);
     }
-
+    function search() {
+        const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(displayWeather);
+    }
     let form = (
         <form className="box" onSubmit={showvalue}>
             <button>
@@ -45,8 +53,7 @@ export default function Search(props) {
             <div>
                 {form}
                 <ul className="detail-input">
-                    <li className="nameinput">{props.defaultcity}</li>
-
+                    <li className="nameinput">{weatherDate.city}</li>
                     <li>
                         <img
                             src={weatherDate.icon}
@@ -55,7 +62,6 @@ export default function Search(props) {
                         />
                     </li>
                     <li>Description: {weatherDate.description}</li>
-
                     <li>
                         Temperature: {Math.round(weatherDate.temperature)}°C
                     </li>
@@ -65,10 +71,25 @@ export default function Search(props) {
             </div>
         );
     } else {
-        let apiKey = "094780c710fa4efd669f0df8c3991927";
-        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultcity}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(displayWeather);
-
-        return form;
+        search();
+        return (
+            <div>
+                {form}
+                <div className="loader">
+                    <Oval
+                        height={80}
+                        width={80}
+                        color="#4fa94d"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                        ariaLabel="oval-loading"
+                        secondaryColor="#4fa94d"
+                        strokeWidth={2}
+                        strokeWidthSecondary={2}
+                    />
+                </div>
+            </div>
+        );
     }
 }
