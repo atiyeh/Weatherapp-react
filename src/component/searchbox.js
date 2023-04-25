@@ -44,8 +44,9 @@ export default function Search(props) {
         return (
             <div>
                 {form}
-                <div className="nameinput">{props.defaultcity}</div>
                 <ul className="detail-input">
+                    <li className="nameinput">{props.defaultcity}</li>
+
                     <li>
                         <img
                             src={weatherDate.icon}
@@ -53,10 +54,11 @@ export default function Search(props) {
                             className="icon-input"
                         />
                     </li>
+                    <li>Description: {weatherDate.description}</li>
+
                     <li>
                         Temperature: {Math.round(weatherDate.temperature)}°C
                     </li>
-                    <li>Description: {weatherDate.description}</li>
                     <li>Humidity: {weatherDate.humidity}%</li>
                     <li>Wind: {weatherDate.wind}km/h</li>
                 </ul>
