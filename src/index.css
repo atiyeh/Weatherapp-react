@@ -10,7 +10,7 @@ body {
 }
 @import url("https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@300&family=Poppins:wght@300&family=Roboto&family=Rubik+Gemstones&family=Train+One&display=swap");
 .container {
-    padding: 1% 8% 20% 8%;
+    padding: 1% 8% 15% 8%;
     margin: auto;
     width: 30%;
     height: 100%;
@@ -20,6 +20,6 @@ body {
 @media (max-width: 800px) {
     .container {
         width: 75%;
-        padding: 1% 8% 100% 8%;
+        padding: 1% 8% 45% 8%;
     }
 }

@@ -35,23 +35,20 @@ export default function Search(props) {
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(displayWeather);
     }
-    let form = (
-        <form className="box" onSubmit={showvalue}>
-            <button>
-                <FontAwesomeIcon icon={faSearch} size="xl" />
-            </button>
-            <input
-                type="search"
-                placeholder="type a city"
-                onChange={changecity}
-                autoComplete="city"
-            />
-        </form>
-    );
     if (weatherDate.loaded) {
         return (
             <div>
-                {form}
+                <form className="box" onSubmit={showvalue}>
+                    <button>
+                        <FontAwesomeIcon icon={faSearch} size="xl" />
+                    </button>
+                    <input
+                        type="search"
+                        placeholder="type a city"
+                        onChange={changecity}
+                        autoComplete="city"
+                    />
+                </form>
                 <ul className="detail-input">
                     <li className="nameinput">{weatherDate.city}</li>
                     <li>
@@ -74,19 +71,30 @@ export default function Search(props) {
         search();
         return (
             <div>
-                {form}
+                <form className="box" onSubmit={showvalue}>
+                    <Oval
+                        height={20}
+                        width={20}
+                        color="#4fa94d"
+                        visible={true}
+                        ariaLabel="oval-loading"
+                        secondaryColor="#4fa94d"
+                    />{" "}
+                    <input
+                        type="search"
+                        placeholder="type a city"
+                        onChange={changecity}
+                        autoComplete="city"
+                    />
+                </form>
                 <div className="loader">
                     <Oval
                         height={80}
                         width={80}
                         color="#4fa94d"
-                        wrapperStyle={{}}
-                        wrapperClass=""
                         visible={true}
                         ariaLabel="oval-loading"
                         secondaryColor="#4fa94d"
-                        strokeWidth={2}
-                        strokeWidthSecondary={2}
                     />
                 </div>
             </div>
