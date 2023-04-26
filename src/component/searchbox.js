@@ -39,7 +39,7 @@ export default function Search(props) {
         return (
             <div>
                 <form className="box" onSubmit={showvalue}>
-                    <button>
+                    <button className="searchbtn">
                         <FontAwesomeIcon icon={faSearch} size="xl" />
                     </button>
                     <input
@@ -66,6 +66,9 @@ export default function Search(props) {
                     <li>Humidity: {weatherDate.humidity}%</li>
                     <li>Wind: {weatherDate.wind}km/h</li>
                 </ul>
+                <button className="forcastbtn" href="">
+                    Weather Forcating
+                </button>
             </div>
         );
     } else {
