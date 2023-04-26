@@ -45,8 +45,9 @@ export default function Search(props) {
                     <input
                         type="search"
                         placeholder="type a city"
+                        className="placeholderinput"
                         onChange={changecity}
-                        autoComplete="city"
+                        autoComplete={city}
                     />
                 </form>
                 <ul className="detail-input">
@@ -71,7 +72,7 @@ export default function Search(props) {
         search();
         return (
             <div>
-                <form className="box" onSubmit={showvalue}>
+                <form className="box">
                     <Oval
                         height={20}
                         width={20}
@@ -82,9 +83,8 @@ export default function Search(props) {
                     />{" "}
                     <input
                         type="search"
-                        placeholder="type a city"
-                        onChange={changecity}
-                        autoComplete="city"
+                        placeholder="  Fetching to the API..."
+                        autoComplete={city}
                     />
                 </form>
                 <div className="loader">
