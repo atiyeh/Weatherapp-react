@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
-
-import "./searchbox.css";
+import { Outlet, Link } from "react-router-dom";
+import Forcast from "../pages/forcast";
 
 export default function Search(props) {
     const [city, setcity] = useState(props.defaultcity);
@@ -26,7 +26,6 @@ export default function Search(props) {
         event.preventDefault();
         search();
     }
-
     function changecity(event) {
         setcity(event.target.value);
     }
@@ -37,68 +36,72 @@ export default function Search(props) {
     }
     if (weatherDate.loaded) {
         return (
-            <div>
-                <form className="box" onSubmit={showvalue}>
-                    <button className="searchbtn">
-                        <FontAwesomeIcon icon={faSearch} size="xl" />
-                    </button>
-                    <input
-                        type="search"
-                        placeholder="type a city"
-                        className="placeholderinput"
-                        onChange={changecity}
-                        autoComplete={city}
-                    />
-                </form>
-                <ul className="detail-input">
-                    <li className="nameinput">{weatherDate.city}</li>
-                    <li>
-                        <img
-                            src={weatherDate.icon}
-                            alt={weatherDate.description}
-                            className="icon-input"
+            <div className="Search">
+                <div className="container">
+                    <form className="box" onSubmit={showvalue}>
+                        <button className="searchbtn">
+                            <FontAwesomeIcon icon={faSearch} size="xl" />
+                        </button>
+                        <input
+                            type="search"
+                            placeholder="type a city"
+                            className="placeholderinput"
+                            onChange={changecity}
+                            autoComplete={city}
                         />
-                    </li>
-                    <li className="description">{weatherDate.description}</li>
-                    <li>
-                        Temperature: {Math.round(weatherDate.temperature)}°C
-                    </li>
-                    <li>Humidity: {weatherDate.humidity}%</li>
-                    <li>Wind: {weatherDate.wind}km/h</li>
-                </ul>
-                <button className="forcastbtn" href="">
-                    Weather Forcating
-                </button>
+                    </form>
+                    <ul className="detail-input">
+                        <li className="nameinput">{weatherDate.city}</li>
+                        <li>
+                            <img
+                                src={weatherDate.icon}
+                                alt={weatherDate.description}
+                                className="icon-input"
+                            />
+                        </li>
+                        <li className="description">
+                            {weatherDate.description}
+                        </li>
+                        <li>
+                            Temperature: {Math.round(weatherDate.temperature)}°C
+                        </li>
+                        <li>Humidity: {weatherDate.humidity}%</li>
+                        <li>Wind: {weatherDate.wind}km/h</li>
+                    </ul>
+                    <button className="forcastbtn">Weather Forcating</button>
+                </div>
             </div>
         );
     } else {
         search();
         return (
-            <div>
-                <form className="box">
-                    <Oval
-                        height={20}
-                        width={20}
-                        color="#4fa94d"
-                        visible={true}
-                        ariaLabel="oval-loading"
-                        secondaryColor="#4fa94d"
-                    />{" "}
-                    <input
-                        type="search"
-                        placeholder="  Fetching to the API..."
-                        autoComplete={city}
-                    />
-                </form>
-                <div className="loader">
-                    <Oval
-                        height={80}
-                        width={80}
-                        color="#4fa94d"
-                        visible={true}
-                        ariaLabel="oval-loading"
-                        secondaryColor="#4fa94d"
-                    />
+            <div className="Search">
+                <div className="container">
+                    <form className="box">
+                        <Oval
+                            height={20}
+                            width={20}
+                            color="#4fa94d"
+                            visible={true}
+                            ariaLabel="oval-loading"
+                            secondaryColor="#4fa94d"
+                        />{" "}
+                        <input
+                            type="search"
+                            placeholder="  Fetching to the API..."
+                            autoComplete={city}
+                        />
+                    </form>
+                    <div className="loader">
+                        <Oval
+                            height={80}
+                            width={80}
+                            color="#4fa94d"
+                            visible={true}
+                            ariaLabel="oval-loading"
+                            secondaryColor="#4fa94d"
+                        />
+                    </div>
                 </div>
             </div>
         );
