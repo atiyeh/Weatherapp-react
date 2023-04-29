@@ -68,7 +68,15 @@ export default function Search(props) {
                         <li>Humidity: {weatherDate.humidity}%</li>
                         <li>Wind: {weatherDate.wind}km/h</li>
                     </ul>
-                    <button className="forcastbtn">Weather Forcating</button>
+                    <>
+                        <Link to="/forcast">
+                            {" "}
+                            <button className="forcastbtn">
+                                Weather Forcating
+                            </button>
+                        </Link>
+                        <Outlet />
+                    </>
                 </div>
             </div>
         );
