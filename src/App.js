@@ -9,7 +9,7 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route index element={<Search defaultcity="New york" />} />
-                <Route path="forcast" element={<Forcast />} />
+                <Route path="/forcast" element={<Forcast />} />
             </Routes>
         </BrowserRouter>
     );

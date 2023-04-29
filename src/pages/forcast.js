@@ -1,4 +1,5 @@
 import React from "react";
+import "./forcast.css";
 export default function Forcast() {
     return (
         <div>
