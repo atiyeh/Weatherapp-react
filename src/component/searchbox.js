@@ -5,6 +5,7 @@ import axios from "axios";
 import { Oval } from "react-loader-spinner";
 import { Outlet, Link } from "react-router-dom";
 import Forcast from "../pages/forcast";
+import Footer from "./footer";
 
 export default function Search(props) {
     const [city, setcity] = useState(props.defaultcity);
@@ -77,6 +78,7 @@ export default function Search(props) {
                         </Link>
                         <Outlet />
                     </>
+                    <Footer />
                 </div>
             </div>
         );

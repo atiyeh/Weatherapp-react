@@ -91,7 +91,7 @@ body {
 }
 @import url("https://fonts.googleapis.com/css2?family=Gloock&family=Montserrat:wght@300&family=Poppins:wght@300&family=Roboto&family=Rubik+Gemstones&family=Train+One&display=swap");
 .container {
-    padding: 1% 8% 15% 8%;
+    padding: 1% 8% 10% 8%;
     margin: auto;
     width: 30%;
     height: 100%;
@@ -101,6 +101,22 @@ body {
 @media (max-width: 800px) {
     .container {
         width: 75%;
-        padding: 1% 8% 45% 8%;
+        padding: 1% 8% 6% 8%;
     }
+}
+.footer {
+    font-size: 19px;
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+    font-family: serif;
+}
+a:-webkit-any-link {
+    color: rgba(192, 172, 247, 0.636);
+    cursor: pointer;
+    text-decoration: none;
+}
+a:hover {
+    color: aliceblue;
+    text-decoration: underline;
 }
