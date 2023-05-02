@@ -6,6 +6,7 @@ import { Oval } from "react-loader-spinner";
 import { Outlet, Link } from "react-router-dom";
 import Forcast from "../pages/forcast";
 import Footer from "./footer";
+import ForcastDay from "../pages/forcastday";
 
 export default function Search(props) {
     const [city, setcity] = useState(props.defaultcity);
@@ -13,6 +14,7 @@ export default function Search(props) {
 
     function displayWeather(response) {
         setWeatherData({
+            coordinates: response.data.coord,
             loaded: true,
             temperature: response.data.main.temp,
             wind: response.data.wind.speed,
@@ -69,7 +71,7 @@ export default function Search(props) {
                         <li>Humidity: {weatherDate.humidity}%</li>
                         <li>Wind: {weatherDate.wind}km/h</li>
                     </ul>
-                    <>
+                    {/* <>
                         <Link to="/forcast">
                             {" "}
                             <button className="forcastbtn">
@@ -77,7 +79,8 @@ export default function Search(props) {
                             </button>
                         </Link>
                         <Outlet />
-                    </>
+                    </> */}
+                    <Forcast coordinate={weatherDate.coordinates} />
                     <Footer />
                 </div>
             </div>
