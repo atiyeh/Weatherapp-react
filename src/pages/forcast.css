@@ -16,7 +16,6 @@ body {
     height: 100%;
     background-color: #0000009e;
     border-radius: 15px;
-    margin-top: 30px;
 }
 .col {
     border: 1px solid #5c6677;
@@ -32,7 +31,7 @@ body {
     font-size: 13px;
 }
 .forcastTemprature {
-    margin-bottom: 3px;
+    margin-top: 7px;
 }
 .loader {
     width: 100px;
@@ -42,7 +41,26 @@ body {
     top: 92px;
 }
 .header {
-    font-size: 20px;
+    margin-bottom: 24px;
+}
+.descriptions {
+    font-size: 11px;
+    margin-bottom: 2px;
+    width: 77%;
+    margin: auto;
+    padding: 2px;
+    border-radius: 10px;
+}
+.descriptions:hover {
+    font-size: 11px;
+    background-color: #76706b;
+    margin-bottom: 2px;
+    width: 77%;
+    margin: auto;
+    font-weight: 900;
+    color: white;
+    padding: 2px;
+    border-radius: 10px;
 }
 @media (max-width: 600px) {
     .col {
@@ -51,8 +69,5 @@ body {
         margin: auto;
         margin-top: 3px;
         padding: 0% 15%;
-    }
-    .header {
-        font-size: 15px;
     }
 }

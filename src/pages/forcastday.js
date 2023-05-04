@@ -1,6 +1,7 @@
 import React from "react";
 import "./forcast.css";
 export default function ForcastDay(props) {
+    console.log();
     function max() {
         let maxtemp = Math.round(props.data.temp.max);
         return `${maxtemp}°`;
@@ -20,36 +21,25 @@ export default function ForcastDay(props) {
             "Friday",
             "Saturday",
         ];
-        let month = [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
-        ];
+
         let dayofmonth = date.getDate();
         if (dayofmonth < 10) {
             dayofmonth = `0${dayofmonth}`;
         }
-        let months = month[new Date().getMonth()];
         let dayofweek = date.getDay();
         return `${days[dayofweek]} ${dayofmonth}`;
     }
+    let icon = props.data.weather[0].icon;
+    let description = props.data.weather[0].description;
     return (
         <div>
             <div className="forcastDay">{day()}</div>
             <img
-                src="http://openweathermap.org/img/wn/03n@2x.png"
+                src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
                 alt="scattered clouds"
                 class="icons-input"
             />
+            <div className="descriptions">{description}</div>
             <div className="forcastTemprature">
                 <span className="maxTemprature"> {max()}</span>
                 <span className="minTemprature"> /{min()}</span>

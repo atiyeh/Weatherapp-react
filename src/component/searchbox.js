@@ -71,7 +71,7 @@ export default function Search(props) {
                     </ul>
                     <>
                         <Link
-                            to={`/forcast?lat=${weatherDate.coordinates.lat}&lon=${weatherDate.coordinates.lon}`}
+                            to={`/forcast?lat=${weatherDate.coordinates.lat}&lon=${weatherDate.coordinates.lon}&q=${weatherDate.city}`}
                         >
                             {" "}
                             <button className="forcastbtn">
