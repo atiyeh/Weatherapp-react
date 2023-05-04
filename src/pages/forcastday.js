@@ -34,10 +34,13 @@ export default function ForcastDay(props) {
             "November",
             "December",
         ];
+        let dayofmonth = date.getDate();
+        if (dayofmonth < 10) {
+            dayofmonth = `0${dayofmonth}`;
+        }
         let months = month[new Date().getMonth()];
-
-        let day = date.getDate();
-        return `${day}  ${months}  (${days[day]})`;
+        let dayofweek = date.getDay();
+        return `${days[dayofweek]} ${dayofmonth}`;
     }
     return (
         <div>
@@ -49,7 +52,7 @@ export default function ForcastDay(props) {
             />
             <div className="forcastTemprature">
                 <span className="maxTemprature"> {max()}</span>
-                <span className="minTemprature">{min()}</span>
+                <span className="minTemprature"> /{min()}</span>
             </div>
         </div>
     );

@@ -70,7 +70,9 @@ export default function Search(props) {
                         <li>Wind: {weatherDate.wind}km/h</li>
                     </ul>
                     <>
-                        <Link to="/forcast">
+                        <Link
+                            to={`/forcast?lat=${weatherDate.coordinates.lat}&lon=${weatherDate.coordinates.lon}`}
+                        >
                             {" "}
                             <button className="forcastbtn">
                                 Weather Forcating

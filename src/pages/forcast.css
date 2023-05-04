@@ -10,7 +10,7 @@ body {
     margin-right: 5px;
 }
 .weatherForcast {
-    padding: 1% 8% 10% 8%;
+    padding: 3% 6%;
     margin: auto;
     width: 65%;
     height: 100%;
@@ -20,14 +20,16 @@ body {
 }
 .col {
     border: 1px solid #5c6677;
-    width: 44%;
+    width: 30%;
     margin: auto;
     margin-top: 3px;
-    padding: 0% 28%;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 3px;
 }
 .forcastDay {
     margin-top: 9px;
-    font-size: 11px;
+    font-size: 13px;
 }
 .forcastTemprature {
     margin-bottom: 3px;
@@ -38,4 +40,19 @@ body {
     margin: auto;
     position: relative;
     top: 92px;
+}
+.header {
+    font-size: 20px;
+}
+@media (max-width: 600px) {
+    .col {
+        border: 1px solid #5c6677;
+        width: 44%;
+        margin: auto;
+        margin-top: 3px;
+        padding: 0% 15%;
+    }
+    .header {
+        font-size: 15px;
+    }
 }
