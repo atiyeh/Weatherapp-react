@@ -1,4 +1,5 @@
 import React from "react";
+import "./forcast.css";
 export default function ForcastDay(props) {
     function max() {
         let maxtemp = Math.round(props.data.temp.max);
@@ -10,7 +11,6 @@ export default function ForcastDay(props) {
     }
     function day() {
         let date = new Date(props.data.dt * 1000);
-        let day = date.getDay();
         let days = [
             "Sunday",
             "Monday",
@@ -20,7 +20,24 @@ export default function ForcastDay(props) {
             "Friday",
             "Saturday",
         ];
-        return days[day];
+        let month = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+        let months = month[new Date().getMonth()];
+
+        let day = date.getDate();
+        return `${day}  ${months}  (${days[day]})`;
     }
     return (
         <div>

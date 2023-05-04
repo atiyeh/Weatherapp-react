@@ -1,5 +1,5 @@
 .icons-input {
-    width: 15%;
+    width: 40%;
 }
 body {
     color: white;
@@ -8,4 +8,34 @@ body {
 .maxTemprature {
     font-weight: 700;
     margin-right: 5px;
+}
+.weatherForcast {
+    padding: 1% 8% 10% 8%;
+    margin: auto;
+    width: 65%;
+    height: 100%;
+    background-color: #0000009e;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+.col {
+    border: 1px solid #5c6677;
+    width: 44%;
+    margin: auto;
+    margin-top: 3px;
+    padding: 0% 28%;
+}
+.forcastDay {
+    margin-top: 9px;
+    font-size: 11px;
+}
+.forcastTemprature {
+    margin-bottom: 3px;
+}
+.loader {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    position: relative;
+    top: 92px;
 }

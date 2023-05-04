@@ -4,9 +4,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { Oval } from "react-loader-spinner";
 import { Outlet, Link } from "react-router-dom";
-import Forcast from "../pages/forcast";
 import Footer from "./footer";
-import ForcastDay from "../pages/forcastday";
 
 export default function Search(props) {
     const [city, setcity] = useState(props.defaultcity);
@@ -71,7 +69,7 @@ export default function Search(props) {
                         <li>Humidity: {weatherDate.humidity}%</li>
                         <li>Wind: {weatherDate.wind}km/h</li>
                     </ul>
-                    {/* <>
+                    <>
                         <Link to="/forcast">
                             {" "}
                             <button className="forcastbtn">
@@ -79,8 +77,7 @@ export default function Search(props) {
                             </button>
                         </Link>
                         <Outlet />
-                    </> */}
-                    <Forcast coordinate={weatherDate.coordinates} />
+                    </>
                     <Footer />
                 </div>
             </div>
