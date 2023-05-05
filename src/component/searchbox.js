@@ -80,7 +80,6 @@ export default function Search(props) {
                         </Link>
                         <Outlet />
                     </>
-                    <Footer />
                 </div>
             </div>
         );

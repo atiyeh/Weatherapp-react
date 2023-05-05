@@ -5,6 +5,7 @@ import ForcastDay from "./forcastday";
 import { Oval } from "react-loader-spinner";
 import Footer from "../component/footer";
 import { useLocation } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 export default function Forcast(props) {
     let [loaded, setLoaded] = useState(false);
@@ -39,26 +40,37 @@ export default function Forcast(props) {
     }
     if (loaded) {
         return (
-            <div className="weatherForcast">
-                <div className="header">
-                    {" "}
-                    <div>6-Day of weather Forcast</div>
-                    <div>
-                        Last Updated At {hour}:{minutes} - {city}
+            <div>
+                <div className="weatherForcast">
+                    <div className="header">
+                        {" "}
+                        <div>6-Day of weather Forcast</div>
+                        <div>
+                            Last Updated At {hour}:{minutes} - {city}
+                        </div>
                     </div>
-                </div>
 
-                {forecast.map(function (dailyforcast, index) {
-                    if (index < 6) {
-                        return (
-                            <div className="col" key={index}>
-                                <ForcastDay data={dailyforcast} />
-                            </div>
-                        );
-                    } else {
-                        return null;
-                    }
-                })}
+                    {forecast.map(function (dailyforcast, index) {
+                        if (index < 6) {
+                            return (
+                                <div className="col" key={index}>
+                                    <ForcastDay data={dailyforcast} />
+                                </div>
+                            );
+                        } else {
+                            return null;
+                        }
+                    })}
+                    <>
+                        <Link to="/">
+                            {" "}
+                            <button className="currentweatherbtn">
+                                Current Weather
+                            </button>
+                        </Link>
+                        <Outlet />
+                    </>
+                </div>
                 <Footer />
             </div>
         );

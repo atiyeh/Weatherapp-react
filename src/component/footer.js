@@ -8,7 +8,9 @@ export default function Footer() {
             Coded by{" "}
             <a href="https://github.com/atiyeh" target="_blank">
                 Atiyeh Beigirad
-            </a>
+            </a>{" "}
+            open-source on{" "}
+            <a href="https://www.linkedin.com/in/atiyebeigirad/">Github</a>
         </div>
     );
 }
