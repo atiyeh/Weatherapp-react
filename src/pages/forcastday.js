@@ -1,7 +1,6 @@
 import React from "react";
 import "./forcast.css";
 export default function ForcastDay(props) {
-    console.log();
     function max() {
         let maxtemp = Math.round(props.data.temp.max);
         return `${maxtemp}°`;

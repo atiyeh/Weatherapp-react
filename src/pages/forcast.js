@@ -30,7 +30,6 @@ export default function Forcast(props) {
     function handleResponse(response) {
         setForecast(response.data.daily);
         setLoaded(true);
-        console.log();
     }
 
     function load() {
