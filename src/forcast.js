@@ -3,7 +3,7 @@ import "./forcast.css";
 import axios from "axios";
 import ForcastDay from "./forcastday";
 import { Oval } from "react-loader-spinner";
-import Footer from "../component/footer";
+import Footer from "./footer";
 import { useLocation } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 
