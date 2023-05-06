@@ -6,7 +6,11 @@ export default function Footer() {
         <div className="footer">
             {" "}
             Coded by{" "}
-            <a href="https://github.com/atiyeh" target="_blank">
+            <a
+                href="https://github.com/atiyeh"
+                target="_blank"
+                rel="noreferrer"
+            >
                 Atiyeh Beigirad
             </a>{" "}
             open-source on{" "}
